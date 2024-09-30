@@ -8,7 +8,7 @@ public static Integer arraySum(List<Integer> numbers) {
     else
     {
         Integer sum = 0;
-        Integer arr = numbers.size;
+        Integer arr = numbers.size();
         for(Integer i = 0;i<arr;i++)
         {
             sum += numbers.[i];
