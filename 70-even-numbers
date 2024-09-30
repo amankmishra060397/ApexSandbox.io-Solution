@@ -1,9 +1,10 @@
 public List<Integer> evenNumbers(Integer n) {
-    List<Integer> evenNumbers = new List<Integer>();
+List<Integer> evenNumbers = new List<Integer>();
+Integer maxEven = n * 2;  // Avoid recalculating 'n * 2' multiple times
 
-    for (Integer i = 2; i <= n * 2; i += 2) {
-        evenNumbers.add(i);
-    }
+for (Integer i = 2; i <= maxEven; i += 2) {
+    evenNumbers.add(i);
+}
 
-    return evenNumbers;
+return evenNumbers;
 }
