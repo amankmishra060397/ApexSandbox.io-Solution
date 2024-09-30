@@ -1,13 +1,13 @@
 public static Integer findLargest(List<Integer> nums) {
     if (nums == null || nums.isEmpty()) {
-        return null;  // Handle empty or null lists
+        return null;  // Return null if the list is null or empty
     }
     
-    Integer largestInteger = nums.get(0);  // Start with the first element
-    
-    for (Integer i = 1; i < nums.size(); i++) {  // Start from the second element
-        if (nums.get(i) > largestInteger) {
-            largestInteger = nums.get(i);  // Update largest if current number is bigger
+    Integer largestInteger = nums.get(0);  // Initialize with the first element
+
+    for (Integer num : nums) {  // Enhanced for-loop for better readability
+        if (num > largestInteger) {
+            largestInteger = num;  // Update largest if current number is bigger
         }
     }
 
