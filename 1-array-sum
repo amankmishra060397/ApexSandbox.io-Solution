@@ -1,17 +1,10 @@
 public static Integer arraySum(List<Integer> numbers) {
-    //code here
-
-    if(numbers == null)
-    {
+    if (numbers == null) {
         return null;
-    }
-    else
-    {
+    } else {
         Integer sum = 0;
-        Integer arr = numbers.size();
-        for(Integer i = 0;i<arr;i++)
-        {
-            sum += numbers.[i];
+        for (Integer num : numbers) {
+            sum += num;
         }
         return sum;
     }
