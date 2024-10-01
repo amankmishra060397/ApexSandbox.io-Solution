@@ -1,0 +1,44 @@
+public class LinkedList{
+    private List<Integer> stack = new List<Integer>();
+    public void addToFront(Integer value){}
+    public Integer removeFromFront(){}
+    public void addToTail(Integer value){}
+    public Integer removeFromTail(){}
+    public Integer size(){}    
+}
+
+public class Node{
+    Integer data;
+    Node next;
+}
+public void addToFront(Integer value)
+{
+    this.stack.add(value,0);
+}
+
+public Integer removeFromFront()
+{
+    this.stack.remove(0);
+    return this.stack;
+}
+
+public void addToTail(Integer value)
+{
+    this.stack.add(value,stack.size()-1);
+}
+
+public Integer removeFromTail(Integer value)
+{
+    if(this.stack.size()>0)
+    {
+        this.stack.add(value,stack.size()-1);
+        return this.stack;
+    }
+    else
+    {
+        return null;
+    }
+    
+}
+
+
