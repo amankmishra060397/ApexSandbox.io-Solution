@@ -1,85 +1,69 @@
 public class LinkedList{
-    private Node head;
-    private Node tail;
-    private Integer size = 0;
-    
-    // Add a value to the front of the linked list
-    public void addToFront(Integer value) {
-        Node newNode = new Node(value);
-        if (head == null) {
-            head = tail = newNode;  // Both head and tail are the same if the list is empty
-        } else {
-            newNode.next = head;    // Point the new node's next to the current head
-            head = newNode;         // Update the head to the new node
-        }
-        size++;
-    }
-    
-    // Remove and return the value from the front of the linked list
-    public Integer removeFromFront() {
-        if (head == null) {
-            return null; // List is empty
-        }
-        Integer value = head.data;  // Get the value of the head node
-        head = head.next;           // Move the head pointer to the next node
-        if (head == null) {
-            tail = null;            // If the list becomes empty, update the tail
-        }
-        size--;
-        return value;
-    }
-    
-    // Add a value to the tail of the linked list
-    public void addToTail(Integer value) {
-        Node newNode = new Node(value);
-        if (tail == null) {
-            head = tail = newNode;  // Both head and tail are the same if the list is empty
-        } else {
-            tail.next = newNode;    // Point the current tail's next to the new node
-            tail = newNode;         // Update the tail to the new node
-        }
-        size++;
-    }
-    
-    // Remove and return the value from the tail of the linked list
-    public Integer removeFromTail() {
-        if (tail == null) {
-            return null; // List is empty
-        }
+
+     List<Integer> intList;
+
+     
+
+    public void addToFront(Integer value){
+
+        if(intList.size()==0){
+
+            intList.add(value);
+
+        }else
+
+        intList.add(0,value);
+
         
-        if (head == tail) {  // If there is only one element in the list
-            Integer value = tail.data;
-            head = tail = null;
-            size--;
-            return value;
-        }
-        
-        // Traverse the list to find the second-last node
-        Node current = head;
-        while (current.next != tail) {
-            current = current.next;
-        }
-        
-        Integer value = tail.data;
-        tail = current;     // Update the tail to the second-last node
-        tail.next = null;   // Remove the last node
-        size--;
-        return value;
+
     }
-    
-    // Return the size of the linked list
-    public Integer size() {
-        return size;
+
+    public Integer removeFromFront(){
+
+        if(intList.size()>0 && intList != null)
+
+       return intList.remove(0);
+
+       else
+
+       return null;
+
     }
+
+    public void addToTail(Integer value){
+
+        intList.add(value);
+
+    }
+
+    public Integer removeFromTail(){
+
+        if(intList.size()>0 && intList != null)
+
+       return intList.remove(intList.size()-1);
+
+       else
+
+       return null;
+
+    }
+
+    public Integer size(){
+
+        return intList.size();
+
+    }   
+
+    public LinkedList(){
+
+       intList = new List<Integer>();
+
+    }
+
 }
 
-// Node class to represent each element in the linked list
-public class Node {
-    Integer data;
-    Node next;
+public class Node{
+
     
-    public Node(Integer data) {
-        this.data = data;
-        this.next = null;
-    }
+
 }
